@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personal Fitness Workout Plan</title>
+</head>
+<style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+</style>
+<h1 style="text-align:center">Personal Fitness Workout Plan</h1>
+<center>
+<table>
+    <tr style="font-size: 60px;">
+        <td>Class Ends In&ensp;</td>
+        <td id="hours">00</td>
+        <td id="min">00</td>
+        <td id="sec">00</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Hours&ensp;&ensp;&ensp;&ensp;&ensp;</td>
+        <td>Minutes&ensp;&ensp;&ensp;&ensp;&ensp;</td>
+        <td>Seconds&ensp;&ensp;&ensp;&ensp;&ensp;</td>
+    </tr>
+</table>
+</center>
+<script type="text/javascript">
+    var x = new Date();
+    var y = x.getTime();
+    var total = y + (4*24*3600000);
+    function count()
+    {
+        var now = new Date();
+        var currentTime = now.getTime();
+
+        var diff = total - currentTime;
+        var s = Math.floor(diff/1000);
+        var m = Math.floor(s/60);
+        var h = Math.floor(m/60);
+    
+        h=h%2;
+        m=m%30;
+        s=s%60;
+
+        h=(h<10)?"0"+h:h;
+        m=(m<10)?"0"+m:m;
+        s=(s<10)?"0"+s:s;
+
+        document.getElementById("hours").innerHTML = h;
+        document.getElementById("min").innerHTML = m;
+        document.getElementById("sec").innerHTML = s;
+
+        setTimeout(count)
+    }   
+    
+    count();
+</script>
+<table style="width: 1920px; height: 700px;">
+    <tr>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+    </tr>
+    <tr>
+        <td><input type="checkbox">Barbell Bench Press</td>
+        <td><input type="checkbox">Lat Pulldown</td>
+        <td><input type="checkbox">Leg Press</td>
+        <td><input type="checkbox">Barbell Bench Press</td>
+        <td><input type="checkbox">Lat Pulldown</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox">Dumbell Bench Press</td>
+        <td><input type="checkbox">Seated Cable Row</td>
+        <td><input type="checkbox">Barbell Squat</td>
+        <td><input type="checkbox">Dumbell Bench Press</td>
+        <td><input type="checkbox">Seated Cable Row</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox">Cable Chest Fly</td>
+        <td><input type="checkbox">Pull Up</td>
+        <td><input type="checkbox">Dumbbell Bulgarian Squat</td>
+        <td><input type="checkbox">Cable Chest Fly</td>
+        <td><input type="checkbox">Pull Up</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox">Tricep Pushdown</td>
+        <td><input type="checkbox">Barbell Row</td>
+        <td><input type="checkbox">Dumbbell Spilt Squat</td>
+        <td><input type="checkbox">Tricep Pushdown</td>
+        <td><input type="checkbox">Barbell Row</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox">Skull Crusher</td>
+        <td><input type="checkbox">Barbell Deadlift</td>
+        <td><input type="checkbox">Weighted Lunge</td>
+        <td><input type="checkbox">Skull Crusher</td>
+        <td><input type="checkbox">Barbell Deadlift</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox">Face Pull</td>
+        <td><input type="checkbox">One Arm Dumbell Row</td>
+        <td><input type="checkbox">Seated Leg Extension</td>
+        <td><input type="checkbox">Face Pull</td>
+        <td><input type="checkbox">One Arm Dumbell Row</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox">Dumbbell Shoulder Press</td>
+        <td><input type="checkbox">Back Extension</td>
+        <td><input type="checkbox">Calf Raise</td>
+        <td><input type="checkbox">Dumbbell Shoulder Press</td>
+        <td><input type="checkbox">Back Extension</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox">Lateral Raise</td>
+        <td><input type="checkbox">T-Bar Row</td>
+        <td><input type="checkbox">Seated Leg Curl</td>
+        <td><input type="checkbox">Lateral Raise</td>
+        <td><input type="checkbox">T-Bar Row</td>
+    </tr>
+</table>
+</html>
